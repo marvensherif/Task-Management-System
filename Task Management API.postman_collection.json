@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "099a4bea-9032-490d-b448-4053337e8e41",
+		"name": "Task Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user\",\r\n  \"password\": \"password\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMDU1NDI2MiwianRpIjoiM2FlODJmODMtM2NmYi00ZDJkLThhYjUtNDNiNTQ2ZjdlODRlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MSwiaXNfbWFuYWdlciI6MH0sIm5iZiI6MTcyMDU1NDI2MiwiY3NyZiI6IjZkYThlYTVkLTY4MjgtNDliMi04M2FiLWYwNmMxNTU2YmZkNiIsImV4cCI6MTcyMDU1NTE2Mn0.TVENtLLmfzEVzchRTNNq1uoUOL7jrPielLNVg3sI5qU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"test task \",\r\n  \"description\": \"This is a test task  .\",\r\n  \"due_date\": \"2024-7-8\",\r\n  \"assignee_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMDM4OTI0MCwianRpIjoiMDYyMGM1OTktMDEwNS00ZjA2LWIzNmItNzIwOTYxYTc5ZDExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MiwiaXNfbWFuYWdlciI6MX0sIm5iZiI6MTcyMDM4OTI0MCwiY3NyZiI6ImIxMWIwZDBjLWM0ODktNDBkYS1iZmZjLWIzMDJiMjhjZGVlOCIsImV4cCI6MTcyMDM5MDE0MH0.Mw0706v4aQVMYzo0pda_daS-UrAeqo1U7b00gshIYDM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMDQ2NTY3NCwianRpIjoiMDU0ZmIzMWQtZTEwMi00ZDk4LTkwMzQtYmM5OGU2OGMxNjMzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MSwiaXNfbWFuYWdlciI6MH0sIm5iZiI6MTcyMDQ2NTY3NCwiY3NyZiI6ImQyNjY5NjhmLWQ3ZDUtNDZiMS1hYzlmLWY0ZTE0M2FmYjJlMSIsImV4cCI6MTcyMDQ2NjU3NH0.3ZPo0AzBYN05qCmOIPg2H1A2PLspUz_ymZJC0krpAQU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Task\",\r\n  \"description\": \"This is an updated test task.\",\r\n  \"status\": \"completed\",\r\n  \"due_date\": \"2024-12-31\",\r\n  \"assignee_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add dependices",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMDQ2ODQ0NywianRpIjoiOWIwMjAwOWQtM2FmNS00YTdlLTljMjctY2U1NmRhYTQ4NGFiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MSwiaXNfbWFuYWdlciI6MH0sIm5iZiI6MTcyMDQ2ODQ0NywiY3NyZiI6ImI3YjQ0Njg0LTVjZDYtNDVlYy04MmY3LTRiOWU4ZWI5NzBlNCIsImV4cCI6MTcyMDQ2OTM0N30.zGV1kIQeL-_2-2Y0k275QjB3ivHiDJudDQ3hSRSxhIk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dependent_task_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/tasks/1/dependencies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						"dependencies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
